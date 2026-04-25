@@ -53,10 +53,9 @@ dns:
   prefer-h3: false
   listen: '0.0.0.0:53'
   default-nameserver:
+    - 119.29.29.29
     - 223.5.5.5
-    - 114.114.114.114
     - 8.8.8.8
-    - 'tls://1.12.12.12:853'
     - 'tls://223.5.5.5:853'
     - system
   enhanced-mode: fake-ip
@@ -67,22 +66,25 @@ dns:
   fake-ip-filter-mode: blacklist
   respect-rules: false
   nameserver:
-    - 114.114.114.114
+    - 119.29.29.29
+    - 223.5.5.5
     - 8.8.8.8
     - 'tls://223.5.5.5:853'
     - 'https://doh.pub/dns-query'
-    - 'https://dns.alidns.com/dns-query#h3=true'
+    - 'https://dns.alidns.com/dns-query'
     - 'https://mozilla.cloudflare-dns.com/dns-query#DNS&h3=true'
   nameserver-policy:
     'geosite:cn,private,apple':
+      - 119.29.29.29
+      - 223.5.5.5
       - 'https://doh.pub/dns-query'
       - 'https://dns.alidns.com/dns-query'
     'geosite:category-ads-all': 'rcode://success'
 proxies:
   -
-    name: '4.1 GB / 100 GB, 已用流量'
+    name: '8.14 GB / 100 GB, 已用流量'
     type: vmess
-    server: vwv-a25-n-1.amna.shop
+    server: owo-i-n2-auto-p26.yajces.com
     port: 25010
     uuid: 4190b003-4c11-4509-9fa3-57d32372a00e
     alterId: 0
@@ -96,9 +98,9 @@ proxies:
       headers:
         Host: netease.com
   -
-    name: '2025-10-29, 过期时间'
+    name: '2026-05-08, 过期时间'
     type: vmess
-    server: vwv-a25-n-1.amna.shop
+    server: owo-i-n2-auto-p26.yajces.com
     port: 25010
     uuid: 4190b003-4c11-4509-9fa3-57d32372a00e
     alterId: 0
@@ -112,9 +114,9 @@ proxies:
       headers:
         Host: netease.com
   -
-    name: 'HK V1 | 01 | 1倍 | A1'
+    name: 'HK V1 | 01 | 1倍 | A1 2'
     type: vmess
-    server: vwv-a25-n-1.amna.shop
+    server: owo-i-n2-auto-p26.yajces.com
     port: 25010
     uuid: 4190b003-4c11-4509-9fa3-57d32372a00e
     alterId: 0
@@ -128,9 +130,9 @@ proxies:
       headers:
         Host: netease.com
   -
-    name: 'HK V1 | 02 | 1倍 | B2'
+    name: 'HK V1 | 02 | 1倍 | B2 2'
     type: vmess
-    server: vwv-b55-n-1.amna.shop
+    server: owo-i-n2-auto-p56.yajces.com
     port: 55010
     uuid: 4190b003-4c11-4509-9fa3-57d32372a00e
     alterId: 0
@@ -144,9 +146,9 @@ proxies:
       headers:
         Host: netease.com
   -
-    name: 'HK V1 | 03 | 1倍 | 原生A1'
+    name: 'HK V1 | 03 | 1倍 | 原生A1 2'
     type: vmess
-    server: vwv-a25-n-1.amna.shop
+    server: owo-i-n2-auto-p26.yajces.com
     port: 25010
     uuid: 4190b003-4c11-4509-9fa3-57d32372a00e
     alterId: 0
@@ -160,9 +162,9 @@ proxies:
       headers:
         Host: netease.com
   -
-    name: 'HK V1 | 04 | 1倍 | 原生B1'
+    name: 'HK V1 | 04 | 1倍 | 原生B1 2'
     type: vmess
-    server: vwv-b55-n-1.amna.shop
+    server: owo-i-n2-auto-p56.yajces.com
     port: 55010
     uuid: 4190b003-4c11-4509-9fa3-57d32372a00e
     alterId: 0
@@ -176,9 +178,9 @@ proxies:
       headers:
         Host: netease.com
   -
-    name: 'JP V1 | 01 | 1倍 | A1'
+    name: 'JP V1 | 01 | 1倍 | A1 2'
     type: vmess
-    server: vwv-a25-n-1.amna.shop
+    server: owo-i-n2-auto-p26.yajces.com
     port: 25010
     uuid: 4190b003-4c11-4509-9fa3-57d32372a00e
     alterId: 0
@@ -192,9 +194,9 @@ proxies:
       headers:
         Host: netease.com
   -
-    name: 'SG V1 | 01 | 1倍 | A1'
+    name: 'SG V1 | 01 | 1倍 | A1 2'
     type: vmess
-    server: vwv-a25-n-1.amna.shop
+    server: owo-i-n2-auto-p26.yajces.com
     port: 25010
     uuid: 4190b003-4c11-4509-9fa3-57d32372a00e
     alterId: 0
@@ -208,9 +210,9 @@ proxies:
       headers:
         Host: netease.com
   -
-    name: 'TW V1 | 01 | 1倍 | A1'
+    name: 'TW V1 | 01 | 1倍 | A1 2'
     type: vmess
-    server: vwv-a25-n-1.amna.shop
+    server: owo-i-n2-auto-p26.yajces.com
     port: 25010
     uuid: 4190b003-4c11-4509-9fa3-57d32372a00e
     alterId: 0
@@ -224,9 +226,9 @@ proxies:
       headers:
         Host: netease.com
   -
-    name: 'US V1 | 01 | 1倍 | A1'
+    name: 'US美国 V1 | 01 | 1倍 | A1 2'
     type: vmess
-    server: vwv-a25-n-1.amna.shop
+    server: owo-i-n2-auto-p26.yajces.com
     port: 25010
     uuid: 4190b003-4c11-4509-9fa3-57d32372a00e
     alterId: 0
@@ -240,86 +242,102 @@ proxies:
       headers:
         Host: netease.com
   -
-    name: 'US美国 V1 | R1 | 1倍 | 106直连备用'
+    name: 'Z CA加拿大 V1 | 01 | 1倍 | A1 2'
+    type: vmess
+    server: owo-i-n2-auto-p26.yajces.com
+    port: 25010
+    uuid: 4190b003-4c11-4509-9fa3-57d32372a00e
+    alterId: 0
+    cipher: auto
+    network: ws
+    tls: false
+    udp: true
+    servername: netease.com
+    ws-opts:
+      path: /zdl/ca/dc/1
+      headers:
+        Host: netease.com
+  -
+    name: 'ZY直连很慢备用 | US | 1倍 | R106 3'
     type: vless
-    server: vwv-np-pt-us-r-1.bedca.cc
+    server: vwv-np-pt-us-r-1b.bedca.cc
     port: 22105
     uuid: 4190b003-4c11-4509-9fa3-57d32372a00e
     network: tcp
     tls: true
     udp: true
     flow: xtls-rprx-vision
-    client-fingerprint: chrome
+    client-fingerprint: edge
     servername: gw.alicdn.com
     reality-opts:
       public-key: 8M7ar3MrKU7w4IVML42LqIHWpbDr-i033fp19y0ZqiU
   -
-    name: 'US美国 V1 | R2 | 1倍 | 107直连备用'
+    name: 'ZY直连很慢备用 | US | 1倍 | R107 3'
     type: vless
-    server: vwv-np-pt-us-r-2.bedca.cc
+    server: vwv-np-pt-us-r-2b.bedca.cc
     port: 22105
     uuid: 4190b003-4c11-4509-9fa3-57d32372a00e
     network: tcp
     tls: true
     udp: true
     flow: xtls-rprx-vision
-    client-fingerprint: chrome
+    client-fingerprint: edge
     servername: gw.alicdn.com
     reality-opts:
       public-key: 8M7ar3MrKU7w4IVML42LqIHWpbDr-i033fp19y0ZqiU
   -
-    name: 'US美国 V1 | R3 | 1倍 | 108直连备用'
+    name: 'ZY直连很慢备用 | US | 1倍 | R108 3'
     type: vless
-    server: vwv-np-pt-us-r-3.bedca.cc
+    server: vwv-np-pt-us-r-3b.bedca.cc
     port: 22105
     uuid: 4190b003-4c11-4509-9fa3-57d32372a00e
     network: tcp
     tls: true
     udp: true
     flow: xtls-rprx-vision
-    client-fingerprint: chrome
+    client-fingerprint: edge
     servername: gw.alicdn.com
     reality-opts:
       public-key: 8M7ar3MrKU7w4IVML42LqIHWpbDr-i033fp19y0ZqiU
   -
-    name: 'US美国 V1 | R4 | 1倍 | 109直连备用'
+    name: 'ZY直连很慢备用 | US | 1倍 | R109 3'
     type: vless
-    server: vwv-np-pt-us-r-4.bedca.cc
+    server: vwv-np-pt-us-r-4b.bedca.cc
     port: 22105
     uuid: 4190b003-4c11-4509-9fa3-57d32372a00e
     network: tcp
     tls: true
     udp: true
     flow: xtls-rprx-vision
-    client-fingerprint: chrome
+    client-fingerprint: edge
     servername: gw.alicdn.com
     reality-opts:
       public-key: 8M7ar3MrKU7w4IVML42LqIHWpbDr-i033fp19y0ZqiU
   -
-    name: 'US美国 V1 | R5 | 1倍 | 110直连备用'
+    name: 'ZY直连很慢备用 | US | 1倍 | R110 3'
     type: vless
-    server: vwv-np-pt-us-r-5.bedca.cc
+    server: vwv-np-pt-us-r-5b.bedca.cc
     port: 22105
     uuid: 4190b003-4c11-4509-9fa3-57d32372a00e
     network: tcp
     tls: true
     udp: true
     flow: xtls-rprx-vision
-    client-fingerprint: chrome
+    client-fingerprint: edge
     servername: gw.alicdn.com
     reality-opts:
       public-key: 8M7ar3MrKU7w4IVML42LqIHWpbDr-i033fp19y0ZqiU
   -
-    name: 'US美国 V1 | R6 | 1倍 | 111直连备用'
+    name: 'ZY直连很慢备用 | US | 1倍 | R111 3'
     type: vless
-    server: vwv-np-pt-us-r-6.bedca.cc
+    server: vwv-np-pt-us-r-6b.bedca.cc
     port: 22105
     uuid: 4190b003-4c11-4509-9fa3-57d32372a00e
     network: tcp
     tls: true
     udp: true
     flow: xtls-rprx-vision
-    client-fingerprint: chrome
+    client-fingerprint: edge
     servername: gw.alicdn.com
     reality-opts:
       public-key: 8M7ar3MrKU7w4IVML42LqIHWpbDr-i033fp19y0ZqiU
@@ -328,22 +346,23 @@ proxy-groups:
     name: Auto自动
     type: url-test
     proxies:
-      - '4.1 GB / 100 GB, 已用流量'
-      - '2025-10-29, 过期时间'
-      - 'HK V1 | 01 | 1倍 | A1'
-      - 'HK V1 | 02 | 1倍 | B2'
-      - 'HK V1 | 03 | 1倍 | 原生A1'
-      - 'HK V1 | 04 | 1倍 | 原生B1'
-      - 'JP V1 | 01 | 1倍 | A1'
-      - 'SG V1 | 01 | 1倍 | A1'
-      - 'TW V1 | 01 | 1倍 | A1'
-      - 'US V1 | 01 | 1倍 | A1'
-      - 'US美国 V1 | R1 | 1倍 | 106直连备用'
-      - 'US美国 V1 | R2 | 1倍 | 107直连备用'
-      - 'US美国 V1 | R3 | 1倍 | 108直连备用'
-      - 'US美国 V1 | R4 | 1倍 | 109直连备用'
-      - 'US美国 V1 | R5 | 1倍 | 110直连备用'
-      - 'US美国 V1 | R6 | 1倍 | 111直连备用'
+      - '8.14 GB / 100 GB, 已用流量'
+      - '2026-05-08, 过期时间'
+      - 'HK V1 | 01 | 1倍 | A1 2'
+      - 'HK V1 | 02 | 1倍 | B2 2'
+      - 'HK V1 | 03 | 1倍 | 原生A1 2'
+      - 'HK V1 | 04 | 1倍 | 原生B1 2'
+      - 'JP V1 | 01 | 1倍 | A1 2'
+      - 'SG V1 | 01 | 1倍 | A1 2'
+      - 'TW V1 | 01 | 1倍 | A1 2'
+      - 'US美国 V1 | 01 | 1倍 | A1 2'
+      - 'Z CA加拿大 V1 | 01 | 1倍 | A1 2'
+      - 'ZY直连很慢备用 | US | 1倍 | R106 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R107 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R108 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R109 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R110 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R111 3'
     url: 'https://cp.cloudflare.com/generate_204'
     interval: 43200
   -
@@ -355,22 +374,23 @@ proxy-groups:
     lazy: true
     proxies:
       - Auto自动
-      - '4.1 GB / 100 GB, 已用流量'
-      - '2025-10-29, 过期时间'
-      - 'HK V1 | 01 | 1倍 | A1'
-      - 'HK V1 | 02 | 1倍 | B2'
-      - 'HK V1 | 03 | 1倍 | 原生A1'
-      - 'HK V1 | 04 | 1倍 | 原生B1'
-      - 'JP V1 | 01 | 1倍 | A1'
-      - 'SG V1 | 01 | 1倍 | A1'
-      - 'TW V1 | 01 | 1倍 | A1'
-      - 'US V1 | 01 | 1倍 | A1'
-      - 'US美国 V1 | R1 | 1倍 | 106直连备用'
-      - 'US美国 V1 | R2 | 1倍 | 107直连备用'
-      - 'US美国 V1 | R3 | 1倍 | 108直连备用'
-      - 'US美国 V1 | R4 | 1倍 | 109直连备用'
-      - 'US美国 V1 | R5 | 1倍 | 110直连备用'
-      - 'US美国 V1 | R6 | 1倍 | 111直连备用'
+      - '8.14 GB / 100 GB, 已用流量'
+      - '2026-05-08, 过期时间'
+      - 'HK V1 | 01 | 1倍 | A1 2'
+      - 'HK V1 | 02 | 1倍 | B2 2'
+      - 'HK V1 | 03 | 1倍 | 原生A1 2'
+      - 'HK V1 | 04 | 1倍 | 原生B1 2'
+      - 'JP V1 | 01 | 1倍 | A1 2'
+      - 'SG V1 | 01 | 1倍 | A1 2'
+      - 'TW V1 | 01 | 1倍 | A1 2'
+      - 'US美国 V1 | 01 | 1倍 | A1 2'
+      - 'Z CA加拿大 V1 | 01 | 1倍 | A1 2'
+      - 'ZY直连很慢备用 | US | 1倍 | R106 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R107 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R108 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R109 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R110 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R111 3'
   -
     name: Google
     type: select
@@ -380,22 +400,23 @@ proxy-groups:
     lazy: true
     proxies:
       - Proxy手动
-      - '4.1 GB / 100 GB, 已用流量'
-      - '2025-10-29, 过期时间'
-      - 'HK V1 | 01 | 1倍 | A1'
-      - 'HK V1 | 02 | 1倍 | B2'
-      - 'HK V1 | 03 | 1倍 | 原生A1'
-      - 'HK V1 | 04 | 1倍 | 原生B1'
-      - 'JP V1 | 01 | 1倍 | A1'
-      - 'SG V1 | 01 | 1倍 | A1'
-      - 'TW V1 | 01 | 1倍 | A1'
-      - 'US V1 | 01 | 1倍 | A1'
-      - 'US美国 V1 | R1 | 1倍 | 106直连备用'
-      - 'US美国 V1 | R2 | 1倍 | 107直连备用'
-      - 'US美国 V1 | R3 | 1倍 | 108直连备用'
-      - 'US美国 V1 | R4 | 1倍 | 109直连备用'
-      - 'US美国 V1 | R5 | 1倍 | 110直连备用'
-      - 'US美国 V1 | R6 | 1倍 | 111直连备用'
+      - '8.14 GB / 100 GB, 已用流量'
+      - '2026-05-08, 过期时间'
+      - 'HK V1 | 01 | 1倍 | A1 2'
+      - 'HK V1 | 02 | 1倍 | B2 2'
+      - 'HK V1 | 03 | 1倍 | 原生A1 2'
+      - 'HK V1 | 04 | 1倍 | 原生B1 2'
+      - 'JP V1 | 01 | 1倍 | A1 2'
+      - 'SG V1 | 01 | 1倍 | A1 2'
+      - 'TW V1 | 01 | 1倍 | A1 2'
+      - 'US美国 V1 | 01 | 1倍 | A1 2'
+      - 'Z CA加拿大 V1 | 01 | 1倍 | A1 2'
+      - 'ZY直连很慢备用 | US | 1倍 | R106 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R107 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R108 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R109 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R110 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R111 3'
       - REJECT
       - DIRECT
     icon: 'https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/google.svg'
@@ -408,22 +429,23 @@ proxy-groups:
     lazy: true
     proxies:
       - Proxy手动
-      - '4.1 GB / 100 GB, 已用流量'
-      - '2025-10-29, 过期时间'
-      - 'HK V1 | 01 | 1倍 | A1'
-      - 'HK V1 | 02 | 1倍 | B2'
-      - 'HK V1 | 03 | 1倍 | 原生A1'
-      - 'HK V1 | 04 | 1倍 | 原生B1'
-      - 'JP V1 | 01 | 1倍 | A1'
-      - 'SG V1 | 01 | 1倍 | A1'
-      - 'TW V1 | 01 | 1倍 | A1'
-      - 'US V1 | 01 | 1倍 | A1'
-      - 'US美国 V1 | R1 | 1倍 | 106直连备用'
-      - 'US美国 V1 | R2 | 1倍 | 107直连备用'
-      - 'US美国 V1 | R3 | 1倍 | 108直连备用'
-      - 'US美国 V1 | R4 | 1倍 | 109直连备用'
-      - 'US美国 V1 | R5 | 1倍 | 110直连备用'
-      - 'US美国 V1 | R6 | 1倍 | 111直连备用'
+      - '8.14 GB / 100 GB, 已用流量'
+      - '2026-05-08, 过期时间'
+      - 'HK V1 | 01 | 1倍 | A1 2'
+      - 'HK V1 | 02 | 1倍 | B2 2'
+      - 'HK V1 | 03 | 1倍 | 原生A1 2'
+      - 'HK V1 | 04 | 1倍 | 原生B1 2'
+      - 'JP V1 | 01 | 1倍 | A1 2'
+      - 'SG V1 | 01 | 1倍 | A1 2'
+      - 'TW V1 | 01 | 1倍 | A1 2'
+      - 'US美国 V1 | 01 | 1倍 | A1 2'
+      - 'Z CA加拿大 V1 | 01 | 1倍 | A1 2'
+      - 'ZY直连很慢备用 | US | 1倍 | R106 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R107 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R108 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R109 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R110 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R111 3'
       - REJECT
       - DIRECT
     icon: 'https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/apple.svg'
@@ -436,22 +458,23 @@ proxy-groups:
     lazy: true
     proxies:
       - Proxy手动
-      - '4.1 GB / 100 GB, 已用流量'
-      - '2025-10-29, 过期时间'
-      - 'HK V1 | 01 | 1倍 | A1'
-      - 'HK V1 | 02 | 1倍 | B2'
-      - 'HK V1 | 03 | 1倍 | 原生A1'
-      - 'HK V1 | 04 | 1倍 | 原生B1'
-      - 'JP V1 | 01 | 1倍 | A1'
-      - 'SG V1 | 01 | 1倍 | A1'
-      - 'TW V1 | 01 | 1倍 | A1'
-      - 'US V1 | 01 | 1倍 | A1'
-      - 'US美国 V1 | R1 | 1倍 | 106直连备用'
-      - 'US美国 V1 | R2 | 1倍 | 107直连备用'
-      - 'US美国 V1 | R3 | 1倍 | 108直连备用'
-      - 'US美国 V1 | R4 | 1倍 | 109直连备用'
-      - 'US美国 V1 | R5 | 1倍 | 110直连备用'
-      - 'US美国 V1 | R6 | 1倍 | 111直连备用'
+      - '8.14 GB / 100 GB, 已用流量'
+      - '2026-05-08, 过期时间'
+      - 'HK V1 | 01 | 1倍 | A1 2'
+      - 'HK V1 | 02 | 1倍 | B2 2'
+      - 'HK V1 | 03 | 1倍 | 原生A1 2'
+      - 'HK V1 | 04 | 1倍 | 原生B1 2'
+      - 'JP V1 | 01 | 1倍 | A1 2'
+      - 'SG V1 | 01 | 1倍 | A1 2'
+      - 'TW V1 | 01 | 1倍 | A1 2'
+      - 'US美国 V1 | 01 | 1倍 | A1 2'
+      - 'Z CA加拿大 V1 | 01 | 1倍 | A1 2'
+      - 'ZY直连很慢备用 | US | 1倍 | R106 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R107 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R108 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R109 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R110 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R111 3'
       - REJECT
       - DIRECT
     icon: 'https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/netflix.svg'
@@ -464,22 +487,23 @@ proxy-groups:
     lazy: true
     proxies:
       - Proxy手动
-      - '4.1 GB / 100 GB, 已用流量'
-      - '2025-10-29, 过期时间'
-      - 'HK V1 | 01 | 1倍 | A1'
-      - 'HK V1 | 02 | 1倍 | B2'
-      - 'HK V1 | 03 | 1倍 | 原生A1'
-      - 'HK V1 | 04 | 1倍 | 原生B1'
-      - 'JP V1 | 01 | 1倍 | A1'
-      - 'SG V1 | 01 | 1倍 | A1'
-      - 'TW V1 | 01 | 1倍 | A1'
-      - 'US V1 | 01 | 1倍 | A1'
-      - 'US美国 V1 | R1 | 1倍 | 106直连备用'
-      - 'US美国 V1 | R2 | 1倍 | 107直连备用'
-      - 'US美国 V1 | R3 | 1倍 | 108直连备用'
-      - 'US美国 V1 | R4 | 1倍 | 109直连备用'
-      - 'US美国 V1 | R5 | 1倍 | 110直连备用'
-      - 'US美国 V1 | R6 | 1倍 | 111直连备用'
+      - '8.14 GB / 100 GB, 已用流量'
+      - '2026-05-08, 过期时间'
+      - 'HK V1 | 01 | 1倍 | A1 2'
+      - 'HK V1 | 02 | 1倍 | B2 2'
+      - 'HK V1 | 03 | 1倍 | 原生A1 2'
+      - 'HK V1 | 04 | 1倍 | 原生B1 2'
+      - 'JP V1 | 01 | 1倍 | A1 2'
+      - 'SG V1 | 01 | 1倍 | A1 2'
+      - 'TW V1 | 01 | 1倍 | A1 2'
+      - 'US美国 V1 | 01 | 1倍 | A1 2'
+      - 'Z CA加拿大 V1 | 01 | 1倍 | A1 2'
+      - 'ZY直连很慢备用 | US | 1倍 | R106 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R107 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R108 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R109 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R110 3'
+      - 'ZY直连很慢备用 | US | 1倍 | R111 3'
       - REJECT
       - DIRECT
     icon: 'https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/telegram.svg'
