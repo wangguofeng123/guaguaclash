@@ -2,6 +2,7 @@ mixed-port: 10500
 allow-lan: false
 mode: rule
 log-level: info
+unified-delay: true
 
 dns:
   enable: true
@@ -9,19 +10,53 @@ dns:
   nameserver:
     - 223.5.5.5
     - 119.29.29.29
+  fallback:
+    - 1.1.1.1
+    - 8.8.8.8
+  fake-ip-filter:
+    - '*.lan'
+    - localhost.ptlogin2.qq.com
+    - '*.local'
+    - '*.msftncsi.com'
 
 proxies: []
 proxy-groups:
   - name: Proxy
     type: select
-    proxies: []
+    proxies:
+      - Auto
+      - DIRECT
 
   - name: Auto
     type: url-test
     proxies: []
     url: http://www.gstatic.com/generate_204
     interval: 300
+    tolerance: 50
+
+  - name: Google
+    type: select
+    proxies:
+      - Auto
+      - Proxy
+      - DIRECT
+
+  - name: Netflix
+    type: select
+    proxies:
+      - Auto
+      - Proxy
+
+  - name: Telegram
+    type: select
+    proxies:
+      - Auto
+      - Proxy
 
 rules:
   - GEOSITE,cn,DIRECT
+  - GEOSITE,google,Google
+  - GEOSITE,netflix,Netflix
+  - GEOSITE,telegram,Telegram
+  - GEOIP,CN,DIRECT
   - MATCH,Proxy
