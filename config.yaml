@@ -2,61 +2,89 @@ mixed-port: 10500
 allow-lan: false
 mode: rule
 log-level: info
+ipv6: false
+tcp-concurrent: true
 unified-delay: true
 
+# ================= DNS（稳定版） =================
 dns:
   enable: true
+  listen: 127.0.0.1:1053
   enhanced-mode: fake-ip
+
   nameserver:
     - 223.5.5.5
     - 119.29.29.29
+
   fallback:
-    - 1.1.1.1
-    - 8.8.8.8
+    - https://1.1.1.1/dns-query
+    - https://dns.google/dns-query
+
   fake-ip-filter:
     - '*.lan'
-    - localhost.ptlogin2.qq.com
     - '*.local'
+    - localhost.ptlogin2.qq.com
     - '*.msftncsi.com'
 
+# ================= 代理（订阅自动注入） =================
 proxies: []
-proxy-groups:
-  - name: Proxy
-    type: select
-    proxies:
-      - Auto
-      - DIRECT
 
-  - name: Auto
+proxy-groups:
+
+  # 自动测速（核心）
+  - name: AUTO
     type: url-test
-    proxies: []
+    use:
+      - SUB
     url: http://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
+    tolerance: 80
+    lazy: true
 
+  # 手动选择（备用）
+  - name: PROXY
+    type: select
+    use:
+      - SUB
+    proxies:
+      - AUTO
+      - DIRECT
+
+  # 分流组
   - name: Google
     type: select
     proxies:
-      - Auto
-      - Proxy
+      - AUTO
+      - PROXY
       - DIRECT
 
   - name: Netflix
     type: select
     proxies:
-      - Auto
-      - Proxy
+      - AUTO
+      - PROXY
 
   - name: Telegram
     type: select
     proxies:
-      - Auto
-      - Proxy
+      - AUTO
+      - PROXY
 
+  - name: Apple
+    type: select
+    proxies:
+      - DIRECT
+      - AUTO
+
+# ================= 规则（轻量但够用） =================
 rules:
+  - GEOSITE,private,DIRECT
   - GEOSITE,cn,DIRECT
+  - GEOIP,CN,DIRECT,no-resolve
+
   - GEOSITE,google,Google
   - GEOSITE,netflix,Netflix
   - GEOSITE,telegram,Telegram
-  - GEOIP,CN,DIRECT
-  - MATCH,Proxy
+  - GEOSITE,apple,Apple
+
+  - MATCH,PROXY
