@@ -1,50 +1,27 @@
-mixed-port: 7890
-allow-lan: true
-bind-address: "*"
+mixed-port: 10500
+allow-lan: false
 mode: rule
-log-level: warning
-ipv6: false
+log-level: info
 
 dns:
-  enable: false
+  enable: true
+  enhanced-mode: fake-ip
+  nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
 
-proxies:
-  - name: "HK-01"
-    type: vmess
-    server: owo-i-n2-auto-p26.yajces.com
-    port: 25010
-    uuid: 4190b003-4c11-4509-9fa3-57d32372a00e
-    alterId: 0
-    cipher: auto
-    network: ws
-    tls: false
-    udp: true
-    ws-opts:
-      path: /zdl/h/dc/1
-      headers:
-        Host: netease.com
-
-  - name: "HK-02"
-    type: vmess
-    server: owo-i-n2-auto-p56.yajces.com
-    port: 55010
-    uuid: 4190b003-4c11-4509-9fa3-57d32372a00e
-    alterId: 0
-    cipher: auto
-    network: ws
-    tls: false
-    udp: true
-    ws-opts:
-      path: /zdl/h/dc/2
-      headers:
-        Host: netease.com
-
+proxies: []
 proxy-groups:
   - name: Proxy
     type: select
-    proxies:
-      - HK-01
-      - HK-02
+    proxies: []
+
+  - name: Auto
+    type: url-test
+    proxies: []
+    url: http://www.gstatic.com/generate_204
+    interval: 300
 
 rules:
+  - GEOSITE,cn,DIRECT
   - MATCH,Proxy
